@@ -16,8 +16,8 @@
     </div>
     <div class="info_block">
         {% for task in tasks %}
-        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a href="/task/?pk={{ task.pk }}"
-                                                                                   class="more_link">Edit</a></h2>
+        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a href="/task/{{ task.pk }}"
+                                                                                   class="more_link">More</a></h2>
         <div class="form">
             <form action="/task/delete/" method="post">
                 {% csrf_token %}
