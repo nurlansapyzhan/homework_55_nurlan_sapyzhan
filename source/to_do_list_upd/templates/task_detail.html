@@ -1,19 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Title</title>
-</head>
-<body>
-<h1>Task</h1>
-<p>
-    <a href="{% url 'index' %}">Home</a>
-</p>
-<p>Description: {{ task.description }}</p>
-<p>Status: {{ task.status }}</p>
-<p>Finish date: {{ task.finish_date }}</p>
-<p>Detail description: {{ task.detail_description }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Task info{% endblock %}
+{% block menu %}<a href="{% url 'task_add' %}" class="add_link">Add new task</a>{% endblock %}
+{% block content %}
+    <h2>Task detail</h2>
+    <div class="info_block">
+        <p class="info">Description: {{ task.description }}</p>
+        <p class="info">Status: {{ task.status }}</p>
+        <p class="info">Finish date: {{ task.finish_date }}</p>
+        <p class="info">Detail description: {{ task.detail_description }}</p>
+    </div>
+{% endblock %}

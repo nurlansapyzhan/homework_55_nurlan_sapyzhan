@@ -1,18 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>New Task</title>
-</head>
-<body>
-<div class="header">
-    <h1 class="welcome_header">
-        <a href="{% url 'index' %}" class="home_link">Back Home</a>
-    </h1>
-</div>
-<div class="container">
+{% extends 'base.html' %}
+{% block title %}Add new task{% endblock %}
+{% block content %}
     <div class="form">
         <form action="{% url 'task_add' %}" method="post">
             {% csrf_token %}
@@ -41,6 +29,4 @@
             </div>
         </form>
     </div>
-</div>
-</body>
-</html>
+{% endblock %}

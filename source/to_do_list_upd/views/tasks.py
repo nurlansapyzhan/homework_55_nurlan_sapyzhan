@@ -24,7 +24,7 @@ def delete_task(request: WSGIRequest):
     task_pk = request.POST.get('pk')
     task = Task.objects.get(pk=task_pk)
     task.delete()
-    return redirect('/')
+    return redirect('index')
 
 
 def detail_view(request: WSGIRequest, pk):

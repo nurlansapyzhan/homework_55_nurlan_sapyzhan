@@ -1,23 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Home</title>
-</head>
-<body>
-<div class="header">
-    <h1 class="welcome_header">To Do List</h1>
-</div>
-<div class="container">
-    <div class="add_new_task">
-        <a href="{% url 'task_add' %}" class="add_link">Add task</a>
-    </div>
+{% extends 'base.html' %}
+{% block title %}Main page{% endblock %}
+{% block menu %}<a href="{% url 'task_add' %}" class="add_link">Add task</a>{% endblock %}
+{% block content %}
     <div class="info_block">
         {% for task in tasks %}
-        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a href="{% url 'task_detail' task.pk %}"
-                                                                                   class="more_link">More</a></h2>
+        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a
+                href="{% url 'task_detail' task.pk %}"
+                class="more_link">More</a></h2>
         <div class="form">
             <form action="{% url 'task_delete' %}" method="post">
                 {% csrf_token %}
@@ -27,6 +16,4 @@
         </div>
         {% endfor %}
     </div>
-</div>
-</body>
-</html>
+{% endblock %}
