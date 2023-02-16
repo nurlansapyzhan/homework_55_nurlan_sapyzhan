@@ -1,0 +1,85 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #4CAF50;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_row {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+.create_input, button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.create_button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.add_new_task {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.info_block {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.info_block h2 {
+  margin: 0;
+}
+
+.form button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form select {
+  width: 150px;
+}
+
+.more_link{
+  color: #4CAF50;
+}

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>New Task</title>
+</head>
+<body>
+<div class="header">
+    <h1 class="welcome_header">
+        Edit task
+    </h1>
+</div>
+<div class="container">
+    <div class="form">
+        <form action="/task/edit/" method="post">
+            {% csrf_token %}
+            <div class="form_row">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" class="create_input"
+                       value="{{ task.description }}">
+            </div>
+            <div class="form_row">
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option value="new">New</option>
+                    <option value="in order">In order</option>
+                    <option value="finished">Finished</option>
+                </select>
+            </div>
+            <div class="form_row">
+                <label for="finish_date">Finish Date</label>
+                <input type="date" id="finish_date" name="finish_date" class="create_input"
+                       value="{{ task.finish_date }}">
+            </div>
+            <div class="form_row">
+                <button type="submit" class="create_button">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
