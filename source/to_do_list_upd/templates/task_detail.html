@@ -9,10 +9,11 @@
 <body>
 <h1>Task</h1>
 <p>
-    <a href="/">Home</a>
+    <a href="{% url 'index' %}">Home</a>
 </p>
 <p>Description: {{ task.description }}</p>
 <p>Status: {{ task.status }}</p>
 <p>Finish date: {{ task.finish_date }}</p>
+<p>Detail description: {{ task.detail_description }}</p>
 </body>
 </html>

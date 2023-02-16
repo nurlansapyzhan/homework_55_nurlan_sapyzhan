@@ -9,12 +9,12 @@
 <body>
 <div class="header">
     <h1 class="welcome_header">
-        <a href="/" class="home_link">Back</a>
+        <a href="{% url 'index' %}" class="home_link">Back Home</a>
     </h1>
 </div>
 <div class="container">
     <div class="form">
-        <form action="/task/add/" method="post">
+        <form action="{% url 'task_add' %}" method="post">
             {% csrf_token %}
             <div class="form_row">
                 <label for="description">Description</label>
@@ -31,6 +31,10 @@
             <div class="form_row">
                 <label for="finish_date">Finish Date</label>
                 <input type="date" id="finish_date" name="finish_date" class="create_input">
+            </div>
+            <div class="form_row">
+                <label for="detail_description">Detail description</label>
+                <textarea id="detail_description" name="detail_description" class="create_input" rows="5" cols="30"></textarea>
             </div>
             <div class="form_row">
                 <button type="submit" class="create_button">Create</button>

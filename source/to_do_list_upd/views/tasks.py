@@ -11,10 +11,11 @@ def add_task(request: WSGIRequest):
     task_data = {
         'description': request.POST.get('description'),
         'status': request.POST.get('status'),
-        'finish_date': request.POST.get('finish_date')
+        'finish_date': request.POST.get('finish_date'),
+        'detail_description': request.POST.get('detail_description')
     }
     task = Task.objects.create(**task_data)
-    return redirect(reverse('detail_view', kwargs={'pk': task.pk}))
+    return redirect('task_detail', pk=task.pk)
 
 
 def delete_task(request: WSGIRequest):
@@ -23,19 +24,6 @@ def delete_task(request: WSGIRequest):
     task_pk = request.POST.get('pk')
     task = Task.objects.get(pk=task_pk)
     task.delete()
-    return redirect('/')
-
-
-def edit_task(request: WSGIRequest):
-    if request.method == 'GET':
-        return render(request, 'task.html')
-    task_data = {
-        'description': request.POST.get('description'),
-        'status': request.POST.get('status'),
-        'finish_date': request.POST.get('finish_date')
-    }
-    task = Task(**task_data)
-    task.save()
     return redirect('/')
 
 

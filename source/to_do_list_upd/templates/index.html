@@ -12,14 +12,14 @@
 </div>
 <div class="container">
     <div class="add_new_task">
-        <a href="/task/add" class="add_link">Add task</a>
+        <a href="{% url 'task_add' %}" class="add_link">Add task</a>
     </div>
     <div class="info_block">
         {% for task in tasks %}
-        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a href="/task/{{ task.pk }}"
+        <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a href="{% url 'task_detail' task.pk %}"
                                                                                    class="more_link">More</a></h2>
         <div class="form">
-            <form action="/task/delete/" method="post">
+            <form action="{% url 'task_delete' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" value="{{ task.pk }}" name="pk">
                 <button type="submit">Delete task</button>
