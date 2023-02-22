@@ -30,3 +30,15 @@ def delete_task(request: WSGIRequest):
 def detail_view(request: WSGIRequest, pk):
     task = get_object_or_404(Task, pk=pk)
     return render(request, 'task_detail.html', context={'task': task})
+
+
+def edit_task(request: WSGIRequest, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'task_edit.html', context={'task': task})
+    task.description = request.POST.get('description')
+    task.status = request.POST.get('status')
+    task.finish_date = request.POST.get('finish_date')
+    task.detail_description = request.POST.get('detail_description')
+    task.save()
+    return redirect('task_detail', task.pk)

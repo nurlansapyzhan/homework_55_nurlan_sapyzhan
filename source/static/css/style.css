@@ -60,6 +60,7 @@ label {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .info_block h2 {
@@ -69,6 +70,18 @@ label {
 .form button {
     background-color: #4CAF50;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.edit_button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 30%);
+    width: 50px;
+    height: 30px;
+    padding-left: 15px;
 }
 
 .form label {
@@ -78,6 +91,7 @@ label {
 
 .form select {
     width: 150px;
+
 }
 
 .more_link {
@@ -121,4 +135,9 @@ label {
   font-size: 20px;
   line-height: 1.5;
   color: #333;
+}
+
+.card {
+    border-bottom: black 1px solid;
+    margin: 2px;
 }

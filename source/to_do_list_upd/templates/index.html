@@ -2,8 +2,9 @@
 {% block title %}Main page{% endblock %}
 {% block menu %}<a href="{% url 'task_add' %}" class="add_link">Add task</a>{% endblock %}
 {% block content %}
-    <div class="info_block">
-        {% for task in tasks %}
+<div class="info_block">
+    {% for task in tasks %}
+    <div class="card">
         <h2>{{ task.description }} | {{ task.status }} | {{ task.finish_date }} <a
                 href="{% url 'task_detail' task.pk %}"
                 class="more_link">More</a></h2>
@@ -14,6 +15,7 @@
                 <button type="submit">Delete task</button>
             </form>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 {% endblock %}

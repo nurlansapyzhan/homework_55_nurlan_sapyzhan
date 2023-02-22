@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Task info{% endblock %}
-{% block menu %}<a href="{% url 'task_add' %}" class="add_link">Add new task</a>{% endblock %}
+{% block title %}
+    Task info
+{% endblock %}
+{% block menu %}
+    <a href="{% url 'task_add' %}" class="add_link">Add new task</a>
+{% endblock %}
 {% block content %}
     <h2>Task detail</h2>
     <div class="info_block">
@@ -8,5 +12,6 @@
         <p class="info">Status: {{ task.status }}</p>
         <p class="info">Finish date: {{ task.finish_date }}</p>
         <p class="info">Detail description: {{ task.detail_description }}</p>
+        <p class="info edit_button"><a href="{% url 'task_edit' task.pk %}" class="add_link">Edit</a></p>
     </div>
 {% endblock %}
