@@ -141,3 +141,8 @@ label {
     border-bottom: black 1px solid;
     margin: 2px;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+}

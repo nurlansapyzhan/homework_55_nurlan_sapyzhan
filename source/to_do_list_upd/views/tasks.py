@@ -6,14 +6,22 @@ from to_do_list_upd.models import Task
 
 
 def add_task(request: WSGIRequest):
+    errors = {}
     if request.method == "GET":
         return render(request, 'task_create.html')
+    if not request.POST.get('descriptiom'):
+        errors['description'] = 'Данное поля обязательно к заполнению'
+    if not request.POST.get('detail_description'):
+        errors['detail_description'] = 'Данное поля обязательно к заполнению'
     task_data = {
         'description': request.POST.get('description'),
         'status': request.POST.get('status'),
         'finish_date': request.POST.get('finish_date'),
         'detail_description': request.POST.get('detail_description')
     }
+    if errors:
+        print(errors)
+        return render(request, 'task_create.html', context={'errors': errors})
     task = Task.objects.create(**task_data)
     return redirect('task_detail', pk=task.pk)
 
@@ -32,13 +40,34 @@ def detail_view(request: WSGIRequest, pk):
     return render(request, 'task_detail.html', context={'task': task})
 
 
+# def edit_task(request: WSGIRequest, pk):
+#     task = get_object_or_404(Task, pk=pk)
+#     if request.method == 'GET':
+#         return render(request, 'task_edit.html', context={'task': task})
+#     task.description = request.POST.get('description')
+#     task.status = request.POST.get('status')
+#     task.finish_date = request.POST.get('finish_date')
+#     task.detail_description = request.POST.get('detail_description')
+#     task.save()
+#     return redirect('task_detail', task.pk)
+
+
 def edit_task(request: WSGIRequest, pk):
+    errors = {}
+
     task = get_object_or_404(Task, pk=pk)
     if request.method == 'GET':
         return render(request, 'task_edit.html', context={'task': task})
+    if not request.POST.get('descriptiom'):
+        errors['description'] = 'Данное поля обязательно к заполнению'
+    if not request.POST.get('detail_description'):
+        errors['detail_description'] = 'Данное поля обязательно к заполнению'
     task.description = request.POST.get('description')
     task.status = request.POST.get('status')
     task.finish_date = request.POST.get('finish_date')
     task.detail_description = request.POST.get('detail_description')
+    if errors:
+        print(errors)
+        return render(request, 'task_edit.html', context={'task': task, 'errors': errors})
     task.save()
     return redirect('task_detail', task.pk)
