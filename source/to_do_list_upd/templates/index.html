@@ -9,7 +9,7 @@
                 href="{% url 'task_detail' task.pk %}"
                 class="more_link">More</a></h2>
         <div class="form">
-            <form action="{% url 'task_delete' %}" method="post">
+            <form action="{% url 'task_delete' task.pk %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" value="{{ task.pk }}" name="pk">
                 <button type="submit" class="delete_button">Delete task</button>

@@ -19,11 +19,13 @@ def add_task(request: WSGIRequest):
         return redirect('task_detail', pk=task.pk)
 
 
-def delete_task(request: WSGIRequest):
-    if request.method == "GET":
-        return render(request, 'index.html')
-    task_pk = request.POST.get('pk')
-    task = Task.objects.get(pk=task_pk)
+def delete_task(request: WSGIRequest, pk):
+    task = get_object_or_404(Task, pk=pk)
+    return render(request, 'task_confirm_delete.html', context={'task': task})
+
+
+def confirm_delete(request: WSGIRequest, pk):
+    task = get_object_or_404(Task, pk=pk)
     task.delete()
     return redirect('index')
 
@@ -53,5 +55,3 @@ def edit_task(request: WSGIRequest, pk):
         task.detail_description = form.cleaned_data['detail_description']
         task.save()
         return redirect('task_detail', task.pk)
-
-

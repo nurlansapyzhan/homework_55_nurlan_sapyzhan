@@ -148,3 +148,8 @@ label {
     border-bottom: black 1px solid;
     margin: 2px;
 }
+
+.create_input, button{
+    background: #4CAF50;
+    color: white;
+}
