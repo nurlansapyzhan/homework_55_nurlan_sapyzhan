@@ -1,0 +1,27 @@
+{% csrf_token %}
+<div class="form_row">
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" class="create_input"
+           value="{{ task.description }}">
+</div>
+<div class="form_row">
+    <label for="status">Status</label>
+    <select name="status" id="status">
+        <option selected value="new">New</option>
+        <option value="in order">In order</option>
+        <option value="finished">Finished</option>
+    </select>
+</div>
+<div class="form_row">
+    <label for="finish_date">Finish Date</label>
+    <input type="date" id="finish_date" name="finish_date" class="create_input"
+           value="{{ task.finish_date }}">
+</div>
+<div class="form_row">
+    <label for="detail_description">Detail description</label>
+    <input type="text" id="detail_description" name="detail_description" class="create_input"
+           value="{{ task.detail_description }}">
+</div>
+<div class="form_row">
+    <button type="submit" class="create_button">{{ button_text }}</button>
+</div>

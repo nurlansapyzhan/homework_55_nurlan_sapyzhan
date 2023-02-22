@@ -4,29 +4,7 @@
     <div class="form">
         <form action="{% url 'task_add' %}" method="post">
             {% csrf_token %}
-            <div class="form_row">
-                <label for="description">Description</label>
-                <input type="text" id="description" name="description" class="create_input">
-            </div>
-            <div class="form_row">
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="new">New</option>
-                    <option value="in order">In order</option>
-                    <option value="finished">Finished</option>
-                </select>
-            </div>
-            <div class="form_row">
-                <label for="finish_date">Finish Date</label>
-                <input type="date" id="finish_date" name="finish_date" class="create_input">
-            </div>
-            <div class="form_row">
-                <label for="detail_description">Detail description</label>
-                <textarea id="detail_description" name="detail_description" class="create_input" rows="5" cols="30"></textarea>
-            </div>
-            <div class="form_row">
-                <button type="submit" class="create_button">Create</button>
-            </div>
+            {% include 'partial/task_form.html' with button_text='Create' %}
         </form>
     </div>
 {% endblock %}
