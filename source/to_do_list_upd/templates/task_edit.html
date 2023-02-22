@@ -9,7 +9,7 @@
     <div class="form">
         <form action="{% url 'task_edit' task.pk %}" method="post">
             {% csrf_token %}
-            {% include 'partial/task_form.html' with button_text='Edit' %}
+            {% include 'partial/task_form2.html' with button_text='Edit' %}
         </form>
     </div>
 {% endblock %}

@@ -12,7 +12,7 @@
             <form action="{% url 'task_delete' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" value="{{ task.pk }}" name="pk">
-                <button type="submit">Delete task</button>
+                <button type="submit" class="delete_button">Delete task</button>
             </form>
         </div>
     </div>
