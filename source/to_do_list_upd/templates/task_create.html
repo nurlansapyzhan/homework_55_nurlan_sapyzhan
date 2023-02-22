@@ -4,7 +4,7 @@
     <div class="form">
         <form action="{% url 'task_add' %}" method="post">
             {% csrf_token %}
-            {% include 'partial/task_form2.html' with button_text='Create' %}
+            {% include 'partial/task_form.html' with button_text='Create' %}
         </form>
     </div>
 {% endblock %}

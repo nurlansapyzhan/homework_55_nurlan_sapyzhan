@@ -74,7 +74,7 @@ label {
     margin-bottom: 5px;
 }
 
-.edit_button{
+.edit_button {
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
@@ -138,10 +138,10 @@ label {
 }
 
 .info {
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.5;
-  color: #333;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
 }
 
 .card {
@@ -149,7 +149,7 @@ label {
     margin: 2px;
 }
 
-.create_input, button{
+.create_input, button {
     background: #4CAF50;
     color: white;
 }

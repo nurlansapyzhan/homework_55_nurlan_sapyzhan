@@ -1,52 +1,52 @@
 [
-{
-  "model": "to_do_list_upd.task",
-  "pk": 1,
-  "fields": {
-    "description": "Clean room",
-    "status": "new",
-    "finish_date": "2023-02-19",
-    "detail_description": "Need clean the room before 19th of February"
+  {
+    "model": "to_do_list_upd.task",
+    "pk": 1,
+    "fields": {
+      "description": "Clean room",
+      "status": "new",
+      "finish_date": "2023-02-19",
+      "detail_description": "Need clean the room before 19th of February"
+    }
+  },
+  {
+    "model": "to_do_list_upd.task",
+    "pk": 2,
+    "fields": {
+      "description": "finish homework",
+      "status": "in order",
+      "finish_date": "2023-02-17",
+      "detail_description": "Finish your homework before Friday"
+    }
+  },
+  {
+    "model": "to_do_list_upd.task",
+    "pk": 3,
+    "fields": {
+      "description": "Do some stuff",
+      "status": "finished",
+      "finish_date": "2023-02-15",
+      "detail_description": "Just do something"
+    }
+  },
+  {
+    "model": "to_do_list_upd.task",
+    "pk": 4,
+    "fields": {
+      "description": "Repair car",
+      "status": "in order",
+      "finish_date": "2023-02-19",
+      "detail_description": "Need to fix check engine error"
+    }
+  },
+  {
+    "model": "to_do_list_upd.task",
+    "pk": 5,
+    "fields": {
+      "description": "Cook dinner",
+      "status": "finished",
+      "finish_date": "2023-02-15",
+      "detail_description": null
+    }
   }
-},
-{
-  "model": "to_do_list_upd.task",
-  "pk": 2,
-  "fields": {
-    "description": "finish homework",
-    "status": "in order",
-    "finish_date": "2023-02-17",
-    "detail_description": "Finish your homework before Friday"
-  }
-},
-{
-  "model": "to_do_list_upd.task",
-  "pk": 3,
-  "fields": {
-    "description": "Do some stuff",
-    "status": "finished",
-    "finish_date": "2023-02-15",
-    "detail_description": "Just do something"
-  }
-},
-{
-  "model": "to_do_list_upd.task",
-  "pk": 4,
-  "fields": {
-    "description": "Repair car",
-    "status": "in order",
-    "finish_date": "2023-02-19",
-    "detail_description": "Need to fix check engine error"
-  }
-},
-{
-  "model": "to_do_list_upd.task",
-  "pk": 5,
-  "fields": {
-    "description": "Cook dinner",
-    "status": "finished",
-    "finish_date": "2023-02-15",
-    "detail_description": null
-  }
-}
 ]
